@@ -1,0 +1,87 @@
+:root {
+    --black: #333;
+    --black-opacity-mid: rgba(51, 51, 51, 0.7);
+    --black-opacity: rgba(51, 51, 51, 0.2);
+    --white: #fff;
+    --white-opacity-mid: rgba(255, 255, 255, 0.95);
+    --white-opacity: rgba(255, 255, 255, 0.8);
+    --purple: #673ab7;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--black);
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+/* navbar styles */
+.navbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background-color: var(--purple);
+}
+
+.navbar__logo {
+    font-size: 25px;
+}
+
+/* container styles */
+.container {
+    padding: 30px;
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container > [class^='container'] {
+    height: 100%;
+    flex-basis: calc(50% - 15px);
+    border: 1px solid var(--purple);
+}
+
+.container__drag,
+.container__drop {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container__drag > div,
+.container__drop > div {
+    flex-basis: calc(100% / 3);
+    height: 200px;
+    transform: scale(0.8);
+    background-image: url(http://placehold.it/150x150);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    transition: transform 200ms ease;
+}
+
+.container__drag > div:hover,
+.container__drop > div:hover {
+    transform: scale(1);
+}

@@ -1,0 +1,108 @@
+:root {
+    --black: #333;
+    --black-opacity-mid: rgba(51, 51, 51, 0.7);
+    --black-opacity: rgba(51, 51, 51, 0.2);
+    --white: #fff;
+    --white-opacity-mid: rgba(255, 255, 255, 0.95);
+    --white-opacity: rgba(255, 255, 255, 0.8);
+    --purple: #673ab7;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--black);
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+/* navbar styles */
+.navbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background-color: var(--purple);
+}
+
+.navbar__logo {
+    font-size: 25px;
+}
+
+/* container styles */
+.container {
+    padding: 30px;
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+/* sidenav styles */
+.sidenav {
+    background: var(--purple);
+    height: 100%;
+    flex-basis: 250px;
+    z-index: 99;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidenav__item {
+    width: 100%;
+    background-color: var(--black-opacity);
+    border-radius: 5px;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: var(--white-opacity);
+    transition-property: color, background-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+}
+
+.sidenav__item p {
+    color: inherit;
+    font-size: 14px;
+}
+
+.sidenav__item:hover {
+    color: var(--white-opacity-mid);
+    background-color: var(--black-opacity-mid);
+}
+
+.sidenav__item.active {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+/* preview styles */
+.preview {
+    flex-basis: 100%;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+.preview__video {
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(0.8);
+    transition: transform 200ms ease;
+}
+
+.preview__video.active,
+.preview__video:hover {
+    transform: scale(1);
+}
